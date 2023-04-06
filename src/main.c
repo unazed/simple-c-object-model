@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "object.h"
 #include "instance.h"
-
-#define auto __auto_type
 
 create_type_from_struct (
   {
