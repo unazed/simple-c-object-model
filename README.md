@@ -28,19 +28,23 @@ human readable when trying to write OOP.
 (or type, as the code nomenclature goes.)
 
 - `create_type_from_struct(struct_, method_struct, type_name)`
+
   This is the building block for the rest of the macros, it creates the initial
   structure that encompasses all the object metadata.
 
 - `define_type_methods(method_type_list)`
+
   In the end, this became more of a descriptive macro, which just plants
   `method_type_list` as is, but had prior semantics to allow methods to be
   placed under a nesting member structure.
 
 - `define_method(ret_type, method_name, ...)`
+
   To be used under `define_type_methods`: creates method entries in the internal
   object structure with corresponding metadata
 
 - `declare_type_method(type_name, ret_type, method_name)`
+
   Used after a matching `create_type_from_struct` declaration to match object
   method definitions to their proper declarations. This semantic was a
   compromise to having declarations be done with the `define_method` macro
@@ -52,10 +56,12 @@ run-time initialisation of objects, garbage collection and so forth. There are
 only two primary macros:
 
 - `new_type(type_name)`
+
   Creates a new object instance, and calls the initializer method (if defined.)
   Returns the instance object of `type_name`.
 
 - `free_type(instance)`
+
   Calls the finalizer method of `instance` and destructs the object, and its
   stub methods.
 

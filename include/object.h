@@ -6,9 +6,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define CONCAT_NX(A, B) A ## B
-#define CONCAT(A, B) CONCAT_NX(A, B)
-
 #define auto __auto_type
 
 /* naming macros */
